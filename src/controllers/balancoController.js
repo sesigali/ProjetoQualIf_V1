@@ -1,6 +1,6 @@
 const {Empresa} = require("../models");
 const router = require("express").Router();
-const Balanco = require("../models/index").Balanco
+const Balanco = require("../models/index").Balanco;
 
 //Cadastrar Balanco
 router.post('/adicionar', async (req, res) => {

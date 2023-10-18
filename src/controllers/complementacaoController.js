@@ -1,5 +1,5 @@
-const Complementacao = require("../models/index").Complementacao;
 const router = require("express").Router();
+const Complementacao = require("../models/index").Complementacao;
 
 //Cadastrar Complementacao
 router.post('/complementacao/adicionar', async (req, res) => {

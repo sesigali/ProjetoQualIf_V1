@@ -6,6 +6,7 @@ const Complementacao = require("./complementacaoModel");
 const Compromisso = require("./compromissoModel");
 const Indice = require("./indiceModel");
 const PatrimonioLiquido = require("./patrimonioLiqModel");
+const Relatorio = require("./relatorioModel");
 
 // Relatorio pertence a uma Empresa
 Relatorio.belongsTo(Empresa, { foreignKey: "idEmpresa" });

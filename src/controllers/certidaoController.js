@@ -1,6 +1,6 @@
 const {Empresa} = require("../models");
 const router = require("express").Router();
-const Certidao = require("../models/index").Certidao
+const Certidao = require("../models/index").Certidao;
 
 //Cadastrar Certidao
 router.post('/adicionar', async (req, res) => {

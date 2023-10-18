@@ -1,5 +1,5 @@
-const Compromisso = require("../models/index").Compromisso;
 const router = require("express").Router();
+const Compromisso = require("../models/index").Compromisso;
 
 //Cadastrar Compromisso
 router.post('/compromisso/adicionar', async (req, res) => {
