@@ -13,14 +13,14 @@ app.use(express.urlencoded({ extended: true }));
   await db.sync();
 })();
 
-app.use("/balancoEntity", require("./controlles/balancoControllers.js"))
-app.use("/certidaoEntity", require("./controlles/certidaoController.js"))
-app.use("/complementacaoEntity", require("./controlles/complementacaoController.js"))
-app.use("/compromissoEntity", require("./controlles/compromissoController.js"))
-app.use("/empresaEntity", require("./controlles/empresaController.js"))
-app.use("/indiceEntity", require("./controlles/indiceController.js"))
-app.use("/patrimonioLiqEntity", require("./controlles/patrimonioLiqController.js"))
-app.use("/relatorioEntity", require("./controlles/relatorioController.js"))
+app.use("/balanco", require("./controlles/balancoControllers.js"))
+app.use("/certidao", require("./controlles/certidaoController.js"))
+app.use("/complementacao", require("./controlles/complementacaoController.js"))
+app.use("/compromisso", require("./controlles/compromissoController.js"))
+app.use("/empresa", require("./controlles/empresaController.js"))
+app.use("/indice", require("./controlles/indiceController.js"))
+app.use("/patrimonioLiq", require("./controlles/patrimonioLiqController.js"))
+app.use("/relatorio", require("./controlles/relatorioController.js"))
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`)
