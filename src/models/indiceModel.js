@@ -28,10 +28,6 @@ const Indice = db.define("indice", {
         type: Sequelize.DOUBLE,
         allowNull: true
     },
-
-    /**Danilo: serão calculado pela função, quando essa informação for consultada novamente, o irá aparecer?
-     * a informação do banco de dados ou o cálculo da função??
-     */
     liquidezGeral: {
         type: Sequelize.DOUBLE,
         allowNull: true
