@@ -24,4 +24,4 @@ app.use("/relatorioEntity", require("./controlles/relatorioController.js"))
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`)
-  })
+})
