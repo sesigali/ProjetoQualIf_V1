@@ -8,14 +8,14 @@ router.post('/adicionar', async (req, res) => {
 
         if (razaoSocial && cnpj && contatoEmpresa && tipoServico && valorEstimadoContrato) {
             await Empresa.sync();
-            const empresa = await Empresa.create({
+            const empresaEntity = await Empresa.create({
                 razaoSocial,
                 cnpj,
                 contatoEmpresa,
                 tipoServico,
                 valorEstimadoContrato
             });
-            res.status(201).json(empresa);
+            res.status(201).json(empresaEntity);
         } else {
             res.status(422).json({ Erro: "Parâmetros faltando!" });// verificar 422
         }
@@ -28,8 +28,8 @@ router.post('/adicionar', async (req, res) => {
 router.get('/listartodas', async (req, res) => {
     try {
         await Empresa.sync();
-        const empresas = await Empresa.findAll();
-        res.send(JSON.stringify(empresas, null, 2));
+        const empresaEntity = await Empresa.findAll();
+        res.send(JSON.stringify(empresaEntity, null, 2));
     } catch (e) {
         res.status(500).json({ Erro: "Erro no servidor!" });
     }
@@ -39,10 +39,10 @@ router.get('/listartodas', async (req, res) => {
 router.get('/listarempresa/:id', async (req, res) => {
     try {
         await Empresa.sync();
-        const empresa = await Empresa.findOne({
+        const empresaEntity = await Empresa.findOne({
             where: { idEmpresa: req.params.id }
         });
-        res.json(empresa);
+        res.json(empresaEntity);
     } catch (e) {
         res.status(500).json({ Erro: "Erro no servidor!" });
     }
