@@ -8,10 +8,10 @@ const Compromisso = db.define("compromisso", {
         allowNull: false,
         primaryKey: true
     },
-    comprAssumidos: {
+    /*comprAssumidos: {
         type: Sequelize.DOUBLE, 
         allowNull: true
-    },
+    },*/
     receitaBruta: {
         type: Sequelize.DOUBLE, 
         allowNull: true

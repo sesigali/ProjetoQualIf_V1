@@ -28,7 +28,7 @@ const Indice = db.define("indice", {
         type: Sequelize.DOUBLE,
         allowNull: true
     },
-    liquidezGeral: {
+/*    liquidezGeral: {
         type: Sequelize.DOUBLE,
         allowNull: true
     },
@@ -39,7 +39,7 @@ const Indice = db.define("indice", {
     liquidezCorrente: {
         type: Sequelize.DOUBLE,
         allowNull: true
-    }
+    }*/
 });
 
 module.exports = Indice;

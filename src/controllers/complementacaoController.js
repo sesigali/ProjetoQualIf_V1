@@ -4,12 +4,13 @@ const Complementacao = require("../models/index").Complementacao;
 //Cadastrar Complementacao
 router.post('/complementacao/adicionar', async (req, res) => {
     try {
-        const { capitalGiroouCcl, umDozeContrato, idEmpresa } = req.body;
+        const { capitalGiroouCcl, comprAssumidos, umDozeContrato, idEmpresa } = req.body;
 
         if (idEmpresa != null) {
             await Complementacao.sync();
             const complementacaoEntity = await Complementacao.create({
                 capitalGiroouCcl,
+                comprAssumidos,
                 umDozeContrato,
                 idEmpresa
             });
@@ -51,12 +52,13 @@ router.delete('/complementacao/excluir/:id', async (req, res) => {
 //Editar uma Complementacao por ID
 router.put('/complementacao/editar/:id', async (req, res) => {
     try {
-        const { capitalGiroouCcl, umDozeContrato, idEmpresa } = req.body;
+        const { capitalGiroouCcl, comprAssumidos, umDozeContrato, idEmpresa } = req.body;
 
         if (idEmpresa != null) {
             await Complementacao.sync();
             await Complementacao.update({
                 capitalGiroouCcl,
+                comprAssumidos,
                 umDozeContrato,
                 idEmpresa
             }, {

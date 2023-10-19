@@ -9,9 +9,9 @@ router.post('/compromisso/adicionar', async (req, res) => {
         if (idEmpresa != null) {
             await Compromisso.sync();
             const compromissoEntity = await Compromisso.create({
+                receitaBruta,
                 declaracaoCompr,
                 dre,
-                receitaBruta,
                 justificativa,
                 idEmpresa
             });
@@ -58,9 +58,9 @@ router.put('/compromisso/editar/:id', async (req, res) => {
         if (idEmpresa != null) {
             await Compromisso.sync();
             await Compromisso.update({
+                receitaBruta,
                 declaracaoCompr,
                 dre,
-                receitaBruta,
                 justificativa,
                 idEmpresa
             }, {

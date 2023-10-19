@@ -5,13 +5,13 @@ const Balanco = require("../models/index").Balanco;
 //Cadastrar Balanco
 router.post('/adicionar', async (req, res) => {
     try {
-        const { balanco, dre, idEmpresa } = req.body;
+        const { balanco, conformidadeLei, idEmpresa } = req.body;
 
-        if (balanco, dre, idEmpresa) {
+        if (balanco, conformidadeLei, idEmpresa) {
             await Balanco.sync();
             const balancoEntity = await Balanco.create({
                 balanco,
-                dre,
+                conformidadeLei,
                 idEmpresa
             });
             res.status(201).json(balancoEntity);
@@ -52,13 +52,13 @@ router.delete('/excluir/:id', async (req, res) => {
 //Editar um Balanco por ID
 router.put('/editar/:id', async (req, res) => {
     try {
-        const { balanco, dre, idEmpresa } = req.body;
+        const { balanco, conformidadeLei, idEmpresa } = req.body;
 
-        if ( balanco, dre, idEmpresa) {
+        if ( balanco, conformidadeLei, idEmpresa) {
             await Balanco.sync();
             await Balanco.update({
                 balanco,
-                dre,
+                conformidadeLei,
                 idEmpresa
             }, {
                 where: { idBalanco: req.params.id }
