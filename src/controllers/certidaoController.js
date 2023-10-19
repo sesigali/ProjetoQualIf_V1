@@ -16,6 +16,14 @@ router.post('/adicionar', async (req, res) => {
                 idEmpresa
             });
             res.status(201).json(certidaoEntity);
+        } else if (certidaoFalencia && naturezaCertidao  && idEmpresa) {
+            await Certidao.sync();
+            const certidaoEntity = await Certidao.create({
+                certidaoFalencia,
+                naturezaCertidao,
+                idEmpresa
+            });
+            res.status(201).json(certidaoEntity);
         } else {
             res.status(422).json({ Erro: "Parâmetros faltando!" });
         }

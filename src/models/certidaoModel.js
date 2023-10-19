@@ -9,7 +9,7 @@ const Certidao = db.define("certidao", {
         primaryKey: true
     },
     certidaoFalencia: {
-        type: Sequelize.BLOB, 
+        type: Sequelize.BLOB,
         allowNull: true
     },
     naturezaCertidao: {

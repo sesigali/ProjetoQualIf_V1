@@ -85,3 +85,5 @@ router.put('/editar/:id', async (req, res) => {
         res.status(500).json({ Erro: "Erro no servidor!" });
     }
 });
+
+module.exports = router;

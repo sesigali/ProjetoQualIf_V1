@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 8888
+const port = 8888;
 const db = require('./db/db');
 const cors = require("cors");
 
@@ -26,3 +26,4 @@ app.use("/relatorio", require("./controllers/relatorioController.js"))
 app.listen(port, () => {
     console.log(`Servidor rodando na porta ${port}`)
 })
+
