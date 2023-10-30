@@ -1,6 +1,6 @@
 // Importar os modelos
 const Empresa = require("./empresaModel");
-const Certidao = require("./balancoModel");
+const Certidao = require("./certidaoModel");
 const Balanco = require("./balancoModel");
 const Complementacao = require("./complementacaoModel");
 const Compromisso = require("./compromissoModel");
