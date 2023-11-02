@@ -1,6 +1,20 @@
 const Empresa = require("../models/index").Empresa;
 const router = require("express").Router();
 
+//Último Cadastro de Empresa
+router.get('/ultimoCadastro', async (req, res) => {
+    try {
+        await Empresa.sync();
+        const ultimoCadastro = await Empresa.findOne({
+        order: [['createdAt', 'DESC']], // Ordena pela data de criação em ordem decrescente
+    });
+    
+        res.json(ultimoCadastro);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro no servidor' });
+    }
+}); 
+
 //Cadastrar Empresa
 router.post('/adicionar', async (req, res) => {
     try {
@@ -36,7 +50,7 @@ router.get('/listartodas', async (req, res) => {
 });
 
 //Listar uma Empresa por ID
-router.get('/listarempresa/:id', async (req, res) => {
+router.get('/listarempresa/http://localhost:8888/empresa/ultimoId', async (req, res) => {
     try {
         await Empresa.sync();
         const empresaEntity = await Empresa.findOne({
