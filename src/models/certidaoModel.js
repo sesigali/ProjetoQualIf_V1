@@ -10,15 +10,23 @@ const Certidao = db.define("certidao", {
     },
     certidaoFalencia: {
         type: Sequelize.BLOB,
-        allowNull: true
+        allowNull: false
     },
     naturezaCertidao: {
-        type: Sequelize.BOOLEAN, 
+        type: Sequelize.STRING,
         allowNull: true
     },
     planoRecuperacao: {
-        type: Sequelize.BOOLEAN, 
+        type: Sequelize.STRING,
         allowNull: true
+    },
+    idEmpresa: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'empresas', // Nome da tabela de referência (deve coincidir com o nome da tabela no banco de dados)
+            key: 'idEmpresa' // Nome da coluna na tabela de referência
+        }
     }
 });
 
