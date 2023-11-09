@@ -50,7 +50,7 @@ router.get('/listartodas', async (req, res) => {
 });
 
 //Listar uma Empresa por ID
-router.get('/listarempresa/http://localhost:8888/empresa/ultimoId', async (req, res) => {
+router.get('/listarempresa/:id', async (req, res) => {
     try {
         await Empresa.sync();
         const empresaEntity = await Empresa.findOne({
