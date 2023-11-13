@@ -1,7 +1,7 @@
-const Sequelize = require("sequelize");
-const db = require("../db/db.js");
+//const Sequelize = require("sequelize");
+//const db = require("../db/db.js");
 
-const PatrimonioLiquido = db.define("patrimonioLiquido", {
+/* const PatrimonioLiquido = db.define("patrimonioLiquido", {
     idPatrimonio: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -13,5 +13,5 @@ const PatrimonioLiquido = db.define("patrimonioLiquido", {
         allowNull: true
     }
 });
-
-module.exports = PatrimonioLiquido;
+ */
+//module.exports = PatrimonioLiquido;

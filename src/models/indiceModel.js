@@ -28,18 +28,18 @@ const Indice = db.define("indice", {
         type: Sequelize.DOUBLE,
         allowNull: true
     },
-/*    liquidezGeral: {
-        type: Sequelize.DOUBLE,
+    patrimonioLiquido: {
+        type: Sequelize.DOUBLE, 
         allowNull: true
     },
-    solvenciaGeral: {
-        type: Sequelize.DOUBLE,
-        allowNull: true
-    },
-    liquidezCorrente: {
-        type: Sequelize.DOUBLE,
-        allowNull: true
-    }*/
+    idEmpresa: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'empresas',
+            key: 'idEmpresa' 
+        }
+    }
 });
 
 module.exports = Indice;

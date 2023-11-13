@@ -1,8 +1,9 @@
+const {Empresa} = require("../models");
 const Indice = require("../models/index").Indice;
 const router = require("express").Router();
 
 //Cadastrar Indice
-router.post('/indice/adicionar', async (req, res) => {
+router.post('/adicionar', async (req, res) => {
     try {
         const {
             ativoCirculante,
@@ -10,6 +11,7 @@ router.post('/indice/adicionar', async (req, res) => {
             ativoTotal,
             passivoCirculante,
             passivoNaoCirculante,
+            patrimonioLiquido,
             idEmpresa
         } = req.body;
 
@@ -21,6 +23,7 @@ router.post('/indice/adicionar', async (req, res) => {
                 ativoTotal,
                 passivoCirculante,
                 passivoNaoCirculante,
+                patrimonioLiquido,
                 idEmpresa
             });
             res.status(201).json(indiceEntity);
@@ -33,7 +36,7 @@ router.post('/indice/adicionar', async (req, res) => {
 });
 
 //Listar um Índice por ID
-router.get('/indice/listarindice/:id', async (req, res) => {
+router.get('/listarindice/:id', async (req, res) => {
     try {
         await Indice.sync();
         const indiceEntity = await Indice.findOne({
@@ -46,7 +49,7 @@ router.get('/indice/listarindice/:id', async (req, res) => {
 });
 
 //Excluir um Índice por ID
-router.delete('/indice/excluir/:id', async (req, res) => {
+router.delete('/excluir/:id', async (req, res) => {
     try {
         await Indice.sync();
         await Indice.destroy({
@@ -59,7 +62,7 @@ router.delete('/indice/excluir/:id', async (req, res) => {
 });
 
 //Editar um Índice por ID
-router.put('/indice/editar/:id', async (req, res) => {
+router.put('/editar/:id', async (req, res) => {
     try {
         const {
             ativoCirculante,
@@ -67,6 +70,7 @@ router.put('/indice/editar/:id', async (req, res) => {
             ativoTotal,
             passivoCirculante,
             passivoNaoCirculante,
+            patrimonioLiquido,
             idEmpresa
         } = req.body;
 
@@ -78,6 +82,7 @@ router.put('/indice/editar/:id', async (req, res) => {
                 ativoTotal,
                 passivoCirculante,
                 passivoNaoCirculante,
+                patrimonioLiquido,
                 idEmpresa
             }, {
                 where: { idIndice: req.params.id }

@@ -17,7 +17,7 @@ const Compromisso = db.define("compromisso", {
         allowNull: true
     },
     declaracaoCompr: {
-        type: Sequelize.BOOLEAN, 
+        type: Sequelize.BLOB, 
         allowNull: true
     },
     dre: {
@@ -25,8 +25,16 @@ const Compromisso = db.define("compromisso", {
         allowNull: true
     },
     justificativa: {
-        type: Sequelize.BOOLEAN, 
+        type: Sequelize.STRING, 
         allowNull: true
+    },
+    idEmpresa: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'empresas',
+            key: 'idEmpresa' 
+        }
     }
 });
 

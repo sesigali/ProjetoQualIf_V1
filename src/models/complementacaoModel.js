@@ -12,14 +12,14 @@ const Complementacao = db.define("complementacao", {
         type: Sequelize.DOUBLE, 
         allowNull: true
     },
-   /* capitalGiroouCcl: {
-        type: Sequelize.DOUBLE, 
-        allowNull: true
-    },
-    umDozeContrato: {
-        type: Sequelize.DOUBLE, 
-        allowNull: true
-    }*/
+    idEmpresa: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'empresas',
+            key: 'idEmpresa' 
+        }
+    }
 });
 
 module.exports = Complementacao;

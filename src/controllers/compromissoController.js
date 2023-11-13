@@ -1,8 +1,9 @@
+const {Empresa} = require("../models");
 const router = require("express").Router();
 const Compromisso = require("../models/index").Compromisso;
 
 //Cadastrar Compromisso
-router.post('/compromisso/adicionar', async (req, res) => {
+router.post('/adicionar', async (req, res) => {
     try {
         const { declaracaoCompr, dre, receitaBruta, justificativa, idEmpresa } = req.body;
 
@@ -25,7 +26,7 @@ router.post('/compromisso/adicionar', async (req, res) => {
 });
 
 //Listar um Compromisso por ID
-router.get('/compromisso/listarcompromisso/:id', async (req, res) => {
+router.get('/listarcompromisso/:id', async (req, res) => {
     try {
         await Compromisso.sync();
         const compromissoEntity = await Compromisso.findOne({
@@ -38,7 +39,7 @@ router.get('/compromisso/listarcompromisso/:id', async (req, res) => {
 });
 
 //Excluir um Compromisso por ID
-router.delete('/compromisso/excluir/:id', async (req, res) => {
+router.delete('/excluir/:id', async (req, res) => {
     try {
         await Compromisso.sync();
         await Compromisso.destroy({
@@ -51,7 +52,7 @@ router.delete('/compromisso/excluir/:id', async (req, res) => {
 });
 
 //Editar um Compromisso por ID
-router.put('/compromisso/editar/:id', async (req, res) => {
+router.put('/editar/:id', async (req, res) => {
     try {
         const { declaracaoCompr, dre, receitaBruta, justificativa, idEmpresa } = req.body;
 

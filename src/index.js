@@ -19,7 +19,7 @@ app.use("/complementacao", require("./controllers/complementacaoController.js"))
 app.use("/compromisso", require("./controllers/compromissoController.js"))
 app.use("/empresa", require("./controllers/empresaController.js"))
 app.use("/indice", require("./controllers/indiceController.js"))
-app.use("/patrimonioLiq", require("./controllers/patrimonioLiqController.js"))
+//app.use("/patrimonioLiq", require("./controllers/patrimonioLiqController.js"))
 app.use("/relatorio", require("./controllers/relatorioController.js"))
 
 

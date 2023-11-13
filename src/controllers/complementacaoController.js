@@ -1,17 +1,16 @@
+const {Empresa} = require("../models");
 const router = require("express").Router();
 const Complementacao = require("../models/index").Complementacao;
 
 //Cadastrar Complementacao
-router.post('/complementacao/adicionar', async (req, res) => {
+router.post('/adicionar', async (req, res) => {
     try {
-        const { capitalGiroouCcl, comprAssumidos, umDozeContrato, idEmpresa } = req.body;
+        const { comprAssumidos, idEmpresa } = req.body;
 
         if (idEmpresa != null) {
             await Complementacao.sync();
             const complementacaoEntity = await Complementacao.create({
-                capitalGiroouCcl,
                 comprAssumidos,
-                umDozeContrato,
                 idEmpresa
             });
             res.status(201).json(complementacaoEntity);
@@ -24,7 +23,7 @@ router.post('/complementacao/adicionar', async (req, res) => {
 });
 
 //Listar uma Complementacao por ID
-router.get('/complementacao/listarcomplementacao/:id', async (req, res) => {
+router.get('/listarcomplementacao/:id', async (req, res) => {
     try {
         await Complementacao.sync();
         const complementacaoEntity = await Complementacao.findOne({
@@ -37,7 +36,7 @@ router.get('/complementacao/listarcomplementacao/:id', async (req, res) => {
 });
 
 //Excluir uma Complementacao por ID
-router.delete('/complementacao/excluir/:id', async (req, res) => {
+router.delete('/excluir/:id', async (req, res) => {
     try {
         await Complementacao.sync();
         await Complementacao.destroy({
@@ -50,16 +49,14 @@ router.delete('/complementacao/excluir/:id', async (req, res) => {
 });
 
 //Editar uma Complementacao por ID
-router.put('/complementacao/editar/:id', async (req, res) => {
+router.put('/editar/:id', async (req, res) => {
     try {
-        const { capitalGiroouCcl, comprAssumidos, umDozeContrato, idEmpresa } = req.body;
+        const { comprAssumidos, idEmpresa } = req.body;
 
         if (idEmpresa != null) {
             await Complementacao.sync();
             await Complementacao.update({
-                capitalGiroouCcl,
                 comprAssumidos,
-                umDozeContrato,
                 idEmpresa
             }, {
                 where: { idComplementacao: req.params.id }
