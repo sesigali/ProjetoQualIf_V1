@@ -10,7 +10,7 @@ const Certidao = db.define("certidao", {
     },
     certidaoFalencia: {
         type: Sequelize.BLOB,
-        allowNull: false
+        allowNull: true
     },
     naturezaCertidao: {
         type: Sequelize.STRING,

@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 const db = require("../db/db.js");
 
 const Balanco = db.define("balanco", {
-    idBalanca: {
+    idBalanco: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
