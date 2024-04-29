@@ -9,8 +9,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 (async() => {
-  await db.sync({force:true}) //resetar banco
-  //await db.sync();
+  //await db.sync({force:true}) //resetar banco
+  await db.sync();
 })();
 
 app.use("/balanco", require("./controllers/balancoController.js"))
