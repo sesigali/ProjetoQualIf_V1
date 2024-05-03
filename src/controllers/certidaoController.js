@@ -7,7 +7,7 @@ router.post('/adicionar', async (req, res) => {
     try {
         const { certidaoFalencia, naturezaCertidao, planoRecuperacao, idEmpresa } = req.body;
 
-        if (certidaoFalencia && naturezaCertidao && planoRecuperacao && idEmpresa) {
+        if (naturezaCertidao && planoRecuperacao && idEmpresa) {
             await Certidao.sync();
             const certidaoEntity = await Certidao.create({
                 certidaoFalencia,
