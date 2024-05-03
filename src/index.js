@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
-//const port = 8888;
-const port = 80;
+const port = 8888;
+//const port = 80;
 const db = require('./db/db');
 const cors = require("cors");
 
@@ -10,8 +10,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 (async() => {
-  //await db.sync({force:true}) //resetar banco
-  await db.sync();
+  await db.sync({force:true}) //resetar banco
+  //await db.sync();
 })();
 
 app.use("/balanco", require("./controllers/balancoController.js"))
